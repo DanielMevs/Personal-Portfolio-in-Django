@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, , shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.104.2">
+    <link rel="icon" href="../../../../favicon.ico">
+    <br/>
+    <title>Daniel Mevs</title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Daniel Mevs</h1>
+          <p class="lead text-muted">My name is Daniel Mevs, and I'm a motivated Software Engineer and life-long learner, focused on quality and exceeding clients' expectations. I specialize in Test-Driven Development(TDD), Quality Assurance Testing, Cloud Computing, DevOps, and Data Science.</p>
+          <p>
+            <a href="mailto:dannymevs@hotmail.com" class="btn btn-primary my-2">Email Me</a>
+
+          </p>
+          <img src="{% static 'daniel_mevs.png' %}" height=300></img>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            {% for job in jobs.all %}
+           <div class="col-md-4">
+             <a href="{% url 'detail' job.id %}">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="{{  job.image.url }}">
+                  <div class="card-body">
+                    <p class="card-text">{{job.summary }}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </main>
+
+    <script src="{% static 'jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}" ></script>
+
+
+  </body>
+</html>
+
