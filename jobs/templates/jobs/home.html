@@ -24,6 +24,8 @@
           <p class="lead text-muted">My name is Daniel Mevs, and I'm a motivated Software Engineer and life-long learner, focused on quality and exceeding clients' expectations. I specialize in Test-Driven Development(TDD), Quality Assurance Testing, Cloud Computing, DevOps, and Data Science.</p>
           <p>
             <a href="mailto:dannymevs@hotmail.com" class="btn btn-primary my-2">Email Me</a>
+            &nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/dmevs" target="_blank" class="btn btn-primary my-2">LinkedIn</a>
 
           </p>
           <img src="{% static 'daniel_mevs.png' %}" height=300></img>
@@ -35,17 +37,17 @@
 
           <div class="row">
             {% for job in jobs.all %}
-           <div class="col-md-4">
-             <a href="{% url 'detail' job.id %}">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="{{  job.image.url }}">
-                  <div class="card-body">
-                    <p class="card-text">{{job.summary }}</p>
-                  </div>
+
+            <div class="col-md-4">
+              <a href="{% url 'detail' job.id %}">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{ job.image.url }}">
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
                 </div>
               </div>
-            </a>
-          </div>
+              </a>
+            </div>
           {% endfor %}
         </div>
       </div>
